@@ -178,11 +178,11 @@ async def interactive_mode(eq: FairbudsEQ) -> None:
 
             elif cmd_name == "reconnect":
                 if await eq.reconnect():
-                    print(success("✓ Reconnected! Use 'studio' to restore safe EQ."))
+                    print(success("✓ Reconnected!"))
                 else:
                     print(error("✗ Reconnect failed. Try:"))
                     print("   1. Put earbuds in case, close lid")
-                    print("   2. Wait 10 seconds")
+                    print("   2. Wait 5 seconds")
                     print("   3. Take out earbuds")
                     print("   4. Try 'scan' then 'reconnect' again")
                 continue
