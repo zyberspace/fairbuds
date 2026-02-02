@@ -81,9 +81,11 @@ Use `bluetoothctl scan le` to find the BLE address of your Fairbuds.
 
 ## Generating AutoEQ presets
 
+Follow the setup in the AutoEq README. Then use the parametric equalizer presets in `pex/`. For bass boost, I use the default on the AutoEq [web app](https://autoeq.app/) for the given target.
+
 ```bash
 cd AutoEq
-python -m autoeq --input-file="measurements/rtings/data/in-ear/Bruel & Kjaer 5128/Fairphone Fairbuds.csv" --output-dir="../results" --target="targets/JM-1 with Harman filters.csv" --max-gain=12 --parametric-eq --parametric-eq-config=../pex/fairbuds.yaml --fs=48000 --preamp=-1
+python -m autoeq --input-file="measurements/rtings/data/in-ear/Bruel & Kjaer 5128/Fairphone Fairbuds.csv" --output-dir="../results" --target="targets/JM-1 with Harman filters.csv" --max-gain=12 --parametric-eq --parametric-eq-config=../pex/fairbuds.yaml --fs=48000 --bass-boost=6.5 --preamp=-4
 ```
 
 Manually adjust the max gain depending on how much volume you are willing to lose, and manually tune the preamp to avoid audio quality loss without leading to overflows during calculation.
