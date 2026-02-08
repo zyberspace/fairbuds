@@ -64,6 +64,10 @@
           letter-spacing: 1px;
           margin-bottom: 12px;
         }
+
+        h3 {
+          margin: 12px 0;
+        }
       }
 
       /* Connection */
@@ -358,12 +362,17 @@
     <!-- Presets -->
     <div class="card hidden" id="presets-card">
       <h2>Presets</h2>
+
+      <h3>Built-in</h3>
       <div class="preset-row">
         <button class="preset-btn" data-preset="1">Main</button>
         <button class="preset-btn" data-preset="2">Bass Boost</button>
         <button class="preset-btn" data-preset="3">Flat</button>
         <button class="preset-btn" data-preset="4">Studio</button>
       </div>
+
+      <h3>Custom</h3>
+      <div class="preset-row" id="custom-presets"></div>
     </div>
 
     <!-- Custom EQ -->
