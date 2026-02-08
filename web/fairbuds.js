@@ -55,7 +55,7 @@
     { name: "rtings", bands: [[-1.3,0.10],[3.6,5.32],[4.4,0.10],[0.1,24.95],[-12.0,0.10],[4.8,17.00],[-10.1,1.70],[12.8,0.10]] },
     { name: "rtings_app", bands: [[3.5,0.71],[1.3,0.71],[-10.0,0.71],[0.0,0.71],[-8.1,0.71],[10.0,0.71],[-9.8,0.71],[6.0,0.71]] },
     { name: "rtings_app_studio", bands: [[2.5,0.71],[2.3,0.71],[-8.0,0.71],[3.5,0.71],[-7.1,0.71],[7.0,0.71],[-8.8,0.71],[7.0,0.71]] },
-    { name: "rtings_studio", bands: [[-3.3,0.10],[3.6,5.32],[5.4,0.10],[2.6,24.95],[-12.0,0.10],[-1.8,17.00],[-10.1,1.70],[12.8,0.10]] },
+    { name: "rtings_studio", recommended: true, bands: [[-3.3,0.10],[3.6,5.32],[5.4,0.10],[2.6,24.95],[-12.0,0.10],[-1.8,17.00],[-10.1,1.70],[12.8,0.10]] },
     { name: "senorbackdoor", bands: [[8.0,0.7],[-2.0,0.7],[-5.0,0.7],[2.0,0.7],[-2.0,0.7],[8.0,0.7],[1.0,0.7],[11.0,0.7]] },
   ];
 
@@ -581,6 +581,12 @@
       const btn = document.createElement("button");
       btn.className = "preset-btn";
       btn.textContent = preset.name;
+      if (preset.recommended) {
+        const badge = document.createElement("span");
+        badge.className = "badge";
+        badge.textContent = "recommended";
+        btn.appendChild(badge);
+      }
       btn.addEventListener("click", async function () {
         if (!connected) return;
         document
